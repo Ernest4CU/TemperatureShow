@@ -15,7 +15,7 @@
 <h1>温度实时显示</h1>
 <p style="font-size:50px">温度值为：<span id="showTemperature"></span>℃</p>
 <script>
-	timeId = setInterval("getTemperature();",5000);
+	timeId = setInterval("getTemperature();",500);
 	function getTemperature(){
 		var request =new XMLHttpRequest();
 		request.open("GET","service.php");

@@ -17,6 +17,10 @@
 	{
 		echo "数据库连接失败";
 	}
+	
+	$sql = "DELETE FROM temperature where 1";
+	mysqli_query($con,$sql);
+
 	date_default_timezone_set("Asia/Shanghai");
 	$d=strtotime("now");
 	$timeNow = date("Y-m-d H:i:sa",$d);	
@@ -28,4 +32,9 @@
 		echo "插入失败";
 	}
 	mysqli_close($con); 
+	
+	function del($table,$where){
+			$sql = "DELETE FROM ".$table." where ".$where;
+			$this->query($sql);
+	}
 ?>
